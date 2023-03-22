@@ -1,0 +1,13 @@
+<div class="card">
+  <img src={{userData.photo}} class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{userData.firstName}} {{userData.lastName}}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+    </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Age: {{userData.age}}</li>
+    <li class="list-group-item">Email: {{userData.email}}</li>
+    <li class="list-group-item">Department: {{userData.company.department}}</li>
+  </ul>
+</div>
