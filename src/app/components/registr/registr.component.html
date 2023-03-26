@@ -26,9 +26,9 @@
       {{submit && registerForm.controls.password.errors ? "Password is required. Min 6 symbols" : '' }}
     </p>
     <div class="d-flex justify-content-between align-items-center p-1 mb-2 gap-3">
-      <a href="/login" class="text-decoration-none">Already have an account? Login</a>
-      <button [disabled]="registerForm.invalid" type="submit"
-        class="btn btn-primary fs-7">Register</button>
+      <a routerLink="/signin" class="text-decoration-none">Already have an account? Login</a>
+      <button type="submit"
+        class="btn btn-primary fs-7">Sign up</button>
     </div>
   </form>
 </div>
