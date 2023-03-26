@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
-import { PathLocationStrategy, LocationStrategy } from '@angular/common';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 import { CustomDatePipe } from './pipes/custom-date.pipe';
 import { CardComponent } from './components/card/card.component';
@@ -39,6 +39,10 @@ import { AccessComponent } from './components/access/access.component';
   ],
   providers: [
     {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    },
+    {
       provide: HIGHLIGHT_OPTIONS,
       useValue: {
         coreLibraryLoader: () => import('highlight.js/lib/core'),
@@ -48,10 +52,6 @@ import { AccessComponent } from './components/access/access.component';
           xml: () => import('highlight.js/lib/languages/xml')
         },
       }
-    },
-    {
-      provide: LocationStrategy,
-      useClass: PathLocationStrategy
     }
   ],
   bootstrap: [AppComponent]
