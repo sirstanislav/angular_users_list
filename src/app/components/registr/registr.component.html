@@ -1,0 +1,34 @@
+<div class="container border border-light-subtle rounded-3 p-4 fs-8">
+  <p class="fs-7">Welcome to UL, register with</p>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form-floating" novalidate>
+    <div class="form-floating">
+      <input formControlName="name" [ngClass]="{'is-invalid': submit && registerForm.controls.name.errors}" type="text"
+        class="form-control fs-7" id="floatingInputName" placeholder="Name" value="" required>
+      <label for="floatingInputName">Name</label>
+    </div>
+    <p class="text-danger p-2 m-0">
+      {{submit && registerForm.controls.name.errors ? "Name is required" : '' }}
+    </p>
+    <div class="form-floating">
+      <input formControlName="email" [ngClass]="{'is-invalid': submit && registerForm.controls.email.errors}"
+        type="email" class="form-control fs-7" id="floatingInputEmail" placeholder="name@example.com" value="" required>
+      <label for="floatingInputEmail">Email address</label>
+    </div>
+    <p class="text-danger p-2 m-0">
+      {{submit && registerForm.controls.email.errors ? "Email is required. Example: example@mail.com" : '' }}
+    </p>
+    <div class="form-floating">
+      <input formControlName="password" [ngClass]="{'is-invalid': submit && registerForm.controls.password.errors}"
+        type="password" class="form-control fs-7" id="floatingInputPassword" placeholder="Password" value="" required>
+      <label for="floatingInputPassword">Password</label>
+    </div>
+    <p class="text-danger p-2 m-0">
+      {{submit && registerForm.controls.password.errors ? "Password is required. Min 6 symbols" : '' }}
+    </p>
+    <div class="d-flex justify-content-between align-items-center p-1 mb-2 gap-3">
+      <a routerLink="/signin" class="text-decoration-none">Already have an account? Login</a>
+      <button type="submit"
+        class="btn btn-primary fs-7">Sign up</button>
+    </div>
+  </form>
+</div>

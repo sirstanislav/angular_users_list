@@ -1,0 +1,25 @@
+<div class="container border border-light-subtle rounded-3 p-4 fs-8">
+  <p class="fs-7">Welcome to UL, login with</p>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form-floating" novalidate>
+    <div class="form-floating">
+      <input formControlName="email" [ngClass]="{'is-invalid': submit && loginForm.controls.email.errors}" type="email"
+        class="form-control fs-7" id="floatingInputEmail" placeholder="name@example.com" value="" required>
+      <label for="floatingInputEmail">Email address</label>
+    </div>
+    <p class="text-danger p-2 m-0">
+      {{submit && loginForm.controls.email.errors ? "Email is required. Example: example@mail.com" : '' }}
+    </p>
+    <div class="form-floating">
+      <input formControlName="password" [ngClass]="{'is-invalid': submit && loginForm.controls.password.errors}"
+        type="password" class="form-control fs-7" id="floatingInputPassword" placeholder="Password" value="" required>
+      <label for="floatingInputPassword">Password</label>
+    </div>
+    <p class="text-danger p-2 m-0">
+      {{submit && loginForm.controls.password.errors ? "Password is required. Min 6 symbols" : '' }}
+    </p>
+    <div class="d-flex justify-content-between align-items-center p-1 mb-2 gap-3">
+      <a routerLink="/signup" class="text-decoration-none">Don't have an account? Register</a>
+      <button type="submit" class="btn btn-primary fs-7">Sign in</button>
+    </div>
+  </form>
+</div>
