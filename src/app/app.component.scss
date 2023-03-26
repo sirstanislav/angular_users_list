@@ -3,5 +3,8 @@
   min-height: 100vh;
   max-width: 960px;
 
+  display: flex;
+  flex-direction: column;
+
   margin: 0 auto;
 }
