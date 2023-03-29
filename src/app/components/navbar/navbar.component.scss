@@ -1,3 +1,9 @@
+:host {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 $navbar-toggler-focus-width: none;
 
 @import "../../../../node_modules/bootstrap/scss/bootstrap.scss";

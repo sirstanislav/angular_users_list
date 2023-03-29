@@ -1,25 +1,46 @@
 <nav class="navbar navbar-expand-lg sticky-top bg-white pt-3">
   <div class="container">
+
     <a routerLink="/" class="navbar-brand text-primary fw-bold fs-3">UL</a>
 
-    <ul class="nav justify-content-center">
-      <li class="nav-item">
-        <a routerLink="/" class="nav-link active" aria-current="page">Home</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="/users" class="nav-link">Users</a>
-      </li>
-    </ul>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <div *ngIf="!isLoggedIn" class="d-flex justify-content-between gap-3">
-      <a routerLink="/signin" class="btn btn-link text-decoration-none flex-grow-1 border border-primary rounded-1"
-        role="button" aria-disabled="true">Sign in</a>
-      <a routerLink="/signup" class="btn btn-primary flex-grow-1 rounded-1" role="button" aria-disabled="true">Sign up</a>
+    <div class="collapse navbar-collapse pt-3 pt-lg-0" id="navbarNav">
+      <ul class="nav nav-pills flex-grow-1 justify-content-center flex-column flex-lg-row text-center w-25 mx-auto">
+        <li class="nav-item">
+          <a routerLink="/" [ngClass]="{'active': curentLink === '/'}" class="nav-link" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/users" [ngClass]="{'active': curentLink === '/users'}" class="nav-link">Users</a>
+        </li>
+        <li>
+          <a routerLink="/personal_banking" [ngClass]="{'active': curentLink === '/personal_banking'}" class="nav-link"
+            class="dropdown-item nav-link">P Bank</a>
+        </li>
+        <li>
+          <a routerLink="/business_banking" [ngClass]="{'active': curentLink === '/business_banking'}"
+            class="dropdown-item nav-link">B Bank</a>
+        </li>
+      </ul>
+
+      <div *ngIf="!isToken" class="d-flex justify-content-between gap-3 pt-5 pt-lg-0">
+        <a routerLink="/signin" class="btn btn-link text-decoration-none flex-grow-1 border border-primary rounded-1"
+          role="button" aria-disabled="true">Sign in</a>
+        <a routerLink="/signup" class="btn btn-primary flex-grow-1 rounded-1" role="button" aria-disabled="true">Sign
+          up</a>
+      </div>
+
+      <ul class="list-unstyled m-0 pt-5 pt-lg-0">
+        <li class="d-flex justify-content-center">
+          <a *ngIf="isToken" (click)="logout()" routerLink="/"
+            class="btn btn-link text-decoration-none border border-primary rounded-1" role="button"
+            aria-disabled="true">Exit</a>
+        </li>
+      </ul>
     </div>
-
-    <a *ngIf="isLoggedIn" (click)="logout()" routerLink="/"
-      class="btn btn-link text-decoration-none border border-primary rounded-1" role="button"
-      aria-disabled="true">Exit</a>
 
   </div>
 </nav>
