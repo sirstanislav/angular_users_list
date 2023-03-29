@@ -49,7 +49,6 @@ export const CheckTokenGuard: CanActivateFn = () => {
 //   constructor(private authService: AuthenticationService, private router: Router) { }
 
 //   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-//     console.log("this.authService.currentIsLoggedIn", this.authService.currentIsLoggedIn);
 //     return this.authService.currentIsLoggedIn.pipe(
 //       tap((isLoggedIn: boolean) => {
 //         if (!isLoggedIn) {

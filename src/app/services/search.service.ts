@@ -11,7 +11,7 @@ export class SearchService {
 
   constructor() { }
 
-  onChange(searchValues: Partial<{ search: string | null }>) {
-    this.searchSource.next(searchValues);
+  onChange(searchValue: Partial<{ search: string | null }>) {
+    this.searchSource.next(searchValue);
   }
 }
