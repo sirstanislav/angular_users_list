@@ -32,13 +32,6 @@ export class LoginComponent {
 
   constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private AuthenticationService: AuthenticationService) { }
 
-  formValidation(): void {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-    })
-  }
-
   onSubmit(): void {
     this.submit = true;
 
@@ -50,7 +43,6 @@ export class LoginComponent {
           catchError(this.handleError)
         )
         .subscribe((response: any) => {
-          console.log('Response', response);
           localStorage.setItem("token", response.token);
           localStorage.setItem("userId", response.userId);
           this.AuthenticationService.changeIsLoggedIn(true);

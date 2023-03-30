@@ -32,14 +32,6 @@ export class RegistrComponent {
 
   constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) { }
 
-  formValidation(): void {
-    this.registerForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-    })
-  }
-
   onSubmit():void {
     this.submit = true;
     if (this.registerForm.invalid) {
@@ -51,7 +43,6 @@ export class RegistrComponent {
         )
         .subscribe(
           (response) => {
-            console.log(response);
             this.router.navigate(['/signin'])
           },
         )

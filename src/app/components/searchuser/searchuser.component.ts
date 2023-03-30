@@ -13,17 +13,17 @@ export class SearchuserComponent implements OnInit {
   constructor(private fb: FormBuilder, private searchValue: SearchService, private AuthenticationService: AuthenticationService) { }
 
   searchForm = this.fb.group({
-    search: [''],
+    searchInput: [''],
   })
   isLoggedIn: boolean = false;
 
   ngOnInit() {
     this.searchForm = this.fb.group({
-      search: '',
+      searchInput: '',
     })
 
     this.searchForm.valueChanges.subscribe(searchValues => {
-      this.searchValue.onChange({ search: searchValues.search?.toLowerCase() });
+      this.searchValue.onChange({ search: searchValues.searchInput?.toLowerCase() });
     })
 
     this.AuthenticationService.currentIsLoggedIn.subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn);

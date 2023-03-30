@@ -10,7 +10,6 @@ import { UseridGuard } from './guards/userid.guard';
 import { AccessComponent } from './components/access/access.component';
 import { PersonalbankingComponent } from './components/personalbanking/personalbanking.component';
 import { BusinessbankingComponent } from './components/businessbanking/businessbanking.component';
-import { FiltersComponent } from './components/filters/filters.component';
 
 const routes: Routes = [
   {

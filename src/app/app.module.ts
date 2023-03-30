@@ -12,10 +12,13 @@ import { CardComponent } from './components/card/card.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { RegistrComponent } from './components/registr/registr.component';
-import { SearchuserComponent } from './components/searchuser/searchuser.component';
-import { MainpageComponent } from './components/mainpage/mainpage.component';
 import { AccessComponent } from './components/access/access.component';
+import { RegistrComponent } from './components/registr/registr.component';
+import { FiltersComponent } from './components/filters/filters.component';
+import { MainpageComponent } from './components/mainpage/mainpage.component';
+import { SearchuserComponent } from './components/searchuser/searchuser.component';
+import { PersonalbankingComponent } from './components/personalbanking/personalbanking.component';
+import { BusinessbankingComponent } from './components/businessbanking/businessbanking.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +27,14 @@ import { AccessComponent } from './components/access/access.component';
     LoginComponent,
     CardsComponent,
     CustomDatePipe,
+    AccessComponent,
     NavbarComponent,
     RegistrComponent,
-    SearchuserComponent,
+    FiltersComponent,
     MainpageComponent,
-    AccessComponent,
+    SearchuserComponent,
+    PersonalbankingComponent,
+    BusinessbankingComponent,
   ],
   imports: [
     BrowserModule,

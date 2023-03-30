@@ -1,4 +1,4 @@
-import { Component, Input, Pipe } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { User } from '../../../types/usersDataTypes';
 
 @Component({
@@ -6,6 +6,7 @@ import { User } from '../../../types/usersDataTypes';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
+
 export class CardComponent {
   @Input() userData: User = {} as User;
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { usersDataArray } from 'src/consts/usersDataArray';
 import { SearchService } from '../../services/search.service';
 
