@@ -1,0 +1,15 @@
+<app-filters (submitEvent)="receiveSubmit($event)" [payload]="filters"></app-filters>
+
+<div class="container">
+  <table class="table table-success table-striped table-bordered">
+    <tbody>
+      <ng-container *ngFor="let item of table | keyvalue; let i = index">
+        <tr>
+          <th scope="row">{{i + 1}}</th>
+          <td>{{item.key}}</td>
+          <td>{{item.value}}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
