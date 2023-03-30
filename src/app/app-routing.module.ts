@@ -8,25 +8,46 @@ import { CheckTokenGuard } from './guards/check-token.guard'
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 import { UseridGuard } from './guards/userid.guard';
 import { AccessComponent } from './components/access/access.component';
+import { PersonalbankingComponent } from './components/personalbanking/personalbanking.component';
+import { BusinessbankingComponent } from './components/businessbanking/businessbanking.component';
+import { FiltersComponent } from './components/filters/filters.component';
 
 const routes: Routes = [
   {
-    path: '', canActivate: [CheckTokenGuard], component: NavbarComponent, children: [
+    path: '', component: NavbarComponent, children: [
       { path: '', component: MainpageComponent },
     ]
   },
   {
-    path: '', canActivate: [CheckTokenGuard, UseridGuard], component: NavbarComponent, children: [
-      { path: 'users', component: CardsComponent },
+    path: 'users', canActivate: [CheckTokenGuard, UseridGuard], component: NavbarComponent, children: [
+      { path: '', component: CardsComponent },
     ]
   },
   {
-    path: '', canActivate: [CheckTokenGuard], component: NavbarComponent, children: [
-      { path: 'access', component: AccessComponent },
+    path: 'access', canActivate: [CheckTokenGuard], component: NavbarComponent, children: [
+      { path: '', component: AccessComponent },
     ]
   },
-  { path: 'signin', component: LoginComponent },
-  { path: 'signup', component: RegistrComponent }
+  {
+    path: 'personal_banking', canActivate: [CheckTokenGuard], component: NavbarComponent, children: [
+      { path: '', component: PersonalbankingComponent },
+    ]
+  },
+  {
+    path: 'business_banking', canActivate: [CheckTokenGuard], component: NavbarComponent, children: [
+      { path: '', component: BusinessbankingComponent },
+    ]
+  },
+  {
+    path: 'signin', component: NavbarComponent, children: [
+      { path: '', component: LoginComponent },
+    ]
+  },
+  {
+    path: 'signup', component: NavbarComponent, children: [
+      { path: '', component: RegistrComponent },
+    ]
+  },
 ];
 
 @NgModule({
